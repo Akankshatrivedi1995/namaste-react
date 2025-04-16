@@ -1,14 +1,68 @@
-const parent = React.createElement("div", { id:"parent"},
-[React.createElement("div", { id:"child"},
-[React.createElement("h1", { },"I'm h1 tag"),
-React.createElement("h2", { },"I'm h2 tag")]),
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-React.createElement("div", { id:"child2"},
-[React.createElement("h1", { },"I'm h1 tag"),
-React.createElement("h2", { },"I'm h2 tag")])])
+/**
+ * Header
+ *  -logo
+ *  -Nav Item
+ * Body
+ *  - Search 
+ *  - Restaurant container
+ *  - Resturantcard
+ * Footer
+ *  -Copyright
+ *  -Links
+ *  -Address
+ *  -Contact
+ * 
+ */
+const Header = () => {
+    return (
+        <div className="header">
+            <div className = "logo-container">
+                <img className="logo" src = "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=food&sf=&txt_keyword=All" />
+            </div>
+            <div className = "nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
 
-// const heading = React.createElement("h1", { id:"heading"},"Hello World from React")
+            </div>
+        </div>
+    )
+}
+
+const Resturantcard = () => {
+    return (
+        <div className="res-card">
+           <h3>Megha</h3>
+        </div>
+    )
+}
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="Search">Search</div>
+            <div className="res-container">
+                Restaurant
+            </div>
+        </div>
+    )
+}
+const AppLayout = () => {
+    return (
+        <div className = "app">
+            <Header />
+        </div>
+    )
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
-root.render(parent)
+
+root.render(<AppLayout />)
